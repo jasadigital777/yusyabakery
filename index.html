@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusya Bakery — Lezatnya Selalu di Hati</title>
+    <meta name="description" content="Pastry premium berlapis renyah dengan isian melimpah: Bolen Ubi Ungu, Chocoroll, dan Cheeseroll khas Mojosongo, Surakarta. Lengkap dengan daftar harga dan foto produk asli.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f9f5ff',
+                            100: '#f1e8f5',
+                            600: '#682b7a',
+                            700: '#542066',
+                            800: '#421853',
+                            900: '#321342',
+                            950: '#24102f',
+                        },
+                        gold: {
+                            300: '#f6d66e',
+                            400: '#f2c94c',
+                            500: '#dcae28',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#fffaf1] text-[#332b35] font-sans antialiased selection:bg-brand-700 selection:text-white">
+
+    <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 bg-[#fffaf1]/90 backdrop-blur-md border-b border-transparent transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="Yusya Bakery Logo" class="w-11 h-11 object-contain group-hover:scale-105 transition" onerror="this.onerror=null; this.src='https://placehold.co/100x100/421853/ffffff?text=YB';">
+                <div class="flex flex-col">
+                    <span class="font-serif font-extrabold text-brand-800 text-lg leading-none">Yusya</span>
+                    <span class="text-[9px] font-bold tracking-[0.25em] text-gold-500 mt-1">BAKERY</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+                <a href="#home" class="hover:text-brand-700 transition font-semibold text-brand-800">Home</a>
+                <a href="#tentang" class="hover:text-brand-700 transition">Tentang</a>
+                <a href="#produk" class="hover:text-brand-700 transition">Menu & Harga</a>
+                <a href="#keunggulan" class="hover:text-brand-700 transition">Keunggulan</a>
+                <a href="#faq" class="hover:text-brand-700 transition">FAQ</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20ingin%20memesan%20produk." target="_blank" rel="noopener noreferrer" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-brand-800/20 transform hover:-translate-y-0.5 transition">
+                    Pesan via WhatsApp
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileToggle" class="md:hidden w-10 h-10 rounded-full bg-brand-100 flex flex-col items-center justify-center gap-1.5 focus:outline-none" aria-label="Menu">
+                <span class="w-5 h-0.5 bg-brand-800 transition-transform duration-300"></span>
+                <span class="w-5 h-0.5 bg-brand-800 transition-opacity duration-300"></span>
+                <span class="w-5 h-0.5 bg-brand-800 transition-transform duration-300"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-4 right-4 bg-[#fffaf1]/98 border border-gray-200 rounded-2xl p-4 shadow-xl space-y-2 mt-2">
+            <a href="#home" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Home</a>
+            <a href="#tentang" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Tentang</a>
+            <a href="#produk" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Menu & Harga</a>
+            <a href="#keunggulan" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Keunggulan</a>
+            <a href="#faq" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">FAQ</a>
+            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20ingin%20memesan%20produk." target="_blank" class="block text-center bg-brand-800 text-white py-3 rounded-xl font-bold mt-3 shadow-md">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-br from-amber-50/50 via-[#fffaf1] to-purple-50/50">
+            <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider">
+                        <span class="text-gold-500">✦</span> Authentic Pastry Surakarta
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-extrabold text-brand-950 leading-tight">
+                        Sekali Coba, <br>
+                        <span class="text-brand-700 italic font-normal">Susah Berhenti.</span>
+                    </h1>
+
+                    <p class="text-gray-600 text-base md:text-lg max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        Pastry berlapis emas yang renyah di luar, berpadu dengan isian ubi ungu, cokelat rich, dan keju melimpah. Dibuat fresh setiap hari khusus untukmu.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#produk" class="w-full sm:w-auto bg-brand-800 hover:bg-brand-700 text-white font-bold px-8 py-4 rounded-full shadow-xl shadow-brand-800/20 text-center transform hover:-translate-y-1 transition">
+                            Lihat Menu & Harga →
+                        </a>
+                        <a href="#tentang" class="w-full sm:w-auto bg-white hover:bg-gray-50 border border-gray-200 text-brand-800 font-bold px-8 py-4 rounded-full text-center transition shadow-sm">
+                            Cerita Kami
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-200/60 flex items-center justify-center md:justify-start gap-8 text-xs text-gray-500 font-medium">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span>Freshly Baked by Order (H-1)</span>
+                        </div>
+                        <div>📍 Mojosongo, Surakarta</div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Showcase -->
+                <div class="relative flex items-center justify-center">
+                    <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full bg-purple-200/40 blur-3xl -z-10"></div>
+                    <div class="relative w-full max-w-lg aspect-[4/3] rounded-[2.5rem] bg-gradient-to-tr from-brand-100 to-amber-100 p-3 shadow-2xl border border-white/80 overflow-hidden group">
+                        <img src="produktray.png" alt="Yusya Bakery Assorted Tray" class="w-full h-full object-cover rounded-[2rem] transform group-hover:scale-105 transition duration-700" onerror="this.onerror=null; this.src='https://placehold.co/600x450/421853/ffffff?text=Yusya+Assortment';">
+                        
+                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-white animate-float">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">✨</span>
+                                <div>
+                                    <strong class="block text-brand-900 text-xs font-bold">Cocok untuk hantaran & oleh-oleh</strong>
+                                    <small class="text-gray-500 text-[10px]"></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-extrabold tracking-[0.2em] text-brand-700 uppercase">KUALITAS TERBAIK</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-extrabold text-brand-950">
+                        Bukan Sekadar Camilan, <br>Ini Pengalaman Rasa.
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-base">
+                        Setiap gigitan dirancang untuk menghadirkan kelezatan yang konsisten, memadukan teknik pembuatan pastry modern dengan cita rasa lokal yang melekat di hati.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-3xl bg-[#fffaf1] border border-gray-100 hover:shadow-xl transition group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand-700 text-2xl font-bold mb-6 group-hover:bg-brand-800 group-hover:text-white transition">
+                            01
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mb-3">Pastry Berlapis Renyah</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Lapisan kulit pastry tipis yang dipanggang merata menghasilkan tekstur luar yang garing dengan sensasi gurih mentega premium.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-brand-900 text-white border border-brand-800 shadow-xl transform md:-translate-y-2">
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-gold-400 text-2xl font-bold mb-6">
+                            02
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-3">Isian Melimpah & Lumer</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Mulai dari ubi ungu legit, cokelat pekat berkualitas, hingga keju melimpah yang lumer di setiap bagian tengahnya.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-3xl bg-[#fffaf1] border border-gray-100 hover:shadow-xl transition group">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 flex items-center justify-center text-brand-700 text-2xl font-bold mb-6 group-hover:bg-brand-800 group-hover:text-white transition">
+                            03
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-brand-900 mb-3">Sistem Fresh by Order</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Pesanan diproses secara pre-order H-1 untuk memastikan produk diantar dalam kondisi paling segar, hangat, dan optimal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="produk" class="py-24 bg-gradient-to-b from-white to-[#fffaf1]">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-extrabold tracking-[0.2em] text-brand-700 uppercase">MENU & DAFTAR HARGA</span>
+                        <h2 class="font-serif text-3xl md:text-5xl font-extrabold text-brand-950 mt-2">
+                            Pilih Varian & Harga Favoritmu.
+                        </h2>
+                    </div>
+                    <p class="text-gray-600 max-w-md text-sm md:text-base">
+                        Tersedia dalam kemasan kotak higienis yang elegan. Ideal untuk dinikmati bersama keluarga atau dijadikan hantaran berkelas.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Product 1: Bolen Ubi Ungu -->
+                    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition group flex flex-col justify-between">
+                        <div>
+                            <div class="relative aspect-[4/3] bg-purple-50 overflow-hidden">
+                                <span class="absolute top-4 left-4 bg-gold-400 text-brand-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow-sm">
+                                    Best Seller ✦
+                                </span>
+                                <img src="bolenbelah.png" alt="Bolen Ubi Ungu" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x450/421853/ffffff?text=Bolen+Ubi+Ungu';">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[11px] font-extrabold tracking-widest text-gold-500 uppercase">SIGNATURE PASTRY</span>
+                                <h3 class="font-serif text-2xl font-bold text-brand-900 mt-1 mb-2">Bolen Ubi Ungu</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Kulit pastry renyah berlapis-lapis berisi ubi ungu pilihan yang lembut, manis alami, dan sangat legit di mulut.
+                                </p>
+                                <div class="bg-brand-50/70 p-3.5 rounded-2xl border border-brand-100">
+                                    <span class="text-[11px] font-bold text-brand-700 uppercase tracking-wide block mb-0.5">Estimasi Harga / Box</span>
+                                    <span class="text-xl font-extrabold text-brand-950">Rp 35.000 <span class="text-xs font-normal text-gray-500">/ box isi 10 pcs</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
+                            <div>
+                                <span class="text-[11px] text-gray-400 block">Karakter</span>
+                                <strong class="text-brand-800 text-sm font-bold">Manis & Legit</strong>
+                            </div>
+                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Bolen%20Ubi%20Ungu%20(Rp%2045.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
+                                Pesan Sekarang →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: Chocoroll -->
+                    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition group flex flex-col justify-between">
+                        <div>
+                            <div class="relative aspect-[4/3] bg-amber-50 overflow-hidden">
+                                <span class="absolute top-4 left-4 bg-[#5a382a] text-white font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow-sm">
+                                    Chocolate
+                                </span>
+                                <img src="chocoroll.png" alt="Chocoroll" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x450/421853/ffffff?text=Chocoroll';">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[11px] font-extrabold tracking-widest text-gold-500 uppercase">CHOCOLATE FUSION</span>
+                                <h3 class="font-serif text-2xl font-bold text-brand-900 mt-1 mb-2">Chocoroll</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Gulungan pastry renyah bertabur meises dengan isian cokelat pekat berkualitas tinggi yang lumer seketika di lidah.
+                                </p>
+                                <div class="bg-brand-50/70 p-3.5 rounded-2xl border border-brand-100">
+                                    <span class="text-[11px] font-bold text-brand-700 uppercase tracking-wide block mb-0.5">Estimasi Harga / Box</span>
+                                    <span class="text-xl font-extrabold text-brand-950">Rp 45.000 <span class="text-xs font-normal text-gray-500">/ box isi 10 pcs</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
+                            <div>
+                                <span class="text-[11px] text-gray-400 block">Karakter</span>
+                                <strong class="text-brand-800 text-sm font-bold">Rich & Cokelat</strong>
+                            </div>
+                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Chocoroll%20(Rp%2048.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
+                                Pesan Sekarang →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: Cheeseroll -->
+                    <div class="bg-white rounded-3xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition group flex flex-col justify-between">
+                        <div>
+                            <div class="relative aspect-[4/3] bg-yellow-50 overflow-hidden">
+                                <span class="absolute top-4 left-4 bg-brand-800 text-white font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider z-10 shadow-sm">
+                                    Cheese
+                                </span>
+                                <img src="cheseeroll.png" alt="Cheeseroll" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x450/421853/ffffff?text=Cheeseroll';">
+                            </div>
+                            <div class="p-6">
+                                <span class="text-[11px] font-extrabold tracking-widest text-gold-500 uppercase">SAVORY CHEESE</span>
+                                <h3 class="font-serif text-2xl font-bold text-brand-900 mt-1 mb-2">Cheeseroll</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                    Pastry gurih berlapis dengan isian keju melimpah yang memberikan sensasi creamy serta asin gurih yang sangat nagih.
+                                </p>
+                                <div class="bg-brand-50/70 p-3.5 rounded-2xl border border-brand-100">
+                                    <span class="text-[11px] font-bold text-brand-700 uppercase tracking-wide block mb-0.5">Estimasi Harga / Box</span>
+                                    <span class="text-xl font-extrabold text-brand-950">Rp 45.000 <span class="text-xs font-normal text-gray-500">/ box isi 10 pcs</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-100 mt-4">
+                            <div>
+                                <span class="text-[11px] text-gray-400 block">Karakter</span>
+                                <strong class="text-brand-800 text-sm font-bold">Creamy & Gurih</strong>
+                            </div>
+                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Cheeseroll%20(Rp%2050.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
+                                Pesan Sekarang →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="keunggulan" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                    <span class="text-xs font-extrabold tracking-[0.2em] text-brand-700 uppercase">MENGAPA KAMI</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-extrabold text-brand-950">
+                        Keunggulan Yusya Bakery
+                    </h2>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl bg-amber-50/50 border border-amber-100/60 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-brand-800 font-bold flex items-center justify-center mx-auto text-xl">✦</div>
+                        <h3 class="font-serif font-bold text-brand-900 text-lg">Bahan Pilihan</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Dipilih dari bahan-bahan berkualitas terbaik demi menjaga standar rasa dan aroma.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-purple-50/50 border border-purple-100/60 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-brand-800 font-bold flex items-center justify-center mx-auto text-xl">♡</div>
+                        <h3 class="font-serif font-bold text-brand-900 text-lg">Sepenuh Hati</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Setiap proses pembuatan diperhatikan detailnya agar sampai ke tangan Anda dengan sempurna.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-amber-50/50 border border-amber-100/60 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-brand-800 font-bold flex items-center justify-center mx-auto text-xl">✧</div>
+                        <h3 class="font-serif font-bold text-brand-900 text-lg">Rasa Berkarakter</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Kombinasi unik yang mudah disukai berbagai kalangan usia dari anak-anak hingga dewasa.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-purple-50/50 border border-purple-100/60 text-center space-y-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-brand-800 font-bold flex items-center justify-center mx-auto text-xl">📅</div>
+                        <h3 class="font-serif font-bold text-brand-900 text-lg">Pre-Order H-1</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">Sistem pesanan optimal H-1 untuk menjamin produk diterima saat baru matang dipanggang.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-24 bg-[#fffaf1]">
+            <div class="max-w-5xl mx-auto px-5 grid md:grid-cols-3 gap-12 items-start">
+                <div class="md:col-span-1 space-y-4">
+                    <span class="text-xs font-extrabold tracking-[0.2em] text-brand-700 uppercase">INFORMASI PENTING</span>
+                    <h2 class="font-serif text-3xl font-extrabold text-brand-950">
+                        Pertanyaan Sering Diajukan
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Punya pertanyaan seputar pemesanan, pengiriman, atau produk? Temukan jawabannya di sini atau hubungi kami langsung via WhatsApp.
+                    </p>
+                    <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20ingin%20bertanya%20seputar%20produk." target="_blank" class="inline-block text-brand-800 font-bold text-sm hover:underline pt-2">
+                        Tanya via WhatsApp →
+                    </a>
+                </div>
+
+                <div class="md:col-span-2 space-y-4">
+                    <details class="group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm transition">
+                        <summary class="flex items-center justify-between font-bold text-brand-900 cursor-pointer list-none">
+                            <span>Apakah harus melakukan pre-order?</span>
+                            <span class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center group-open:rotate-45 transition">+</span>
+                        </summary>
+                        <p class="text-gray-600 text-sm mt-4 pt-4 border-t border-gray-100 leading-relaxed">
+                            Ya, Yusya Bakery menerapkan sistem pre-order H-1 agar setiap pesanan dapat disiapkan secara khusus dan terjaga kesegarannya.
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm transition">
+                        <summary class="flex items-center justify-between font-bold text-brand-900 cursor-pointer list-none">
+                            <span>Di mana lokasi operasional Yusya Bakery?</span>
+                            <span class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center group-open:rotate-45 transition">+</span>
+                        </summary>
+                        <p class="text-gray-600 text-sm mt-4 pt-4 border-t border-gray-100 leading-relaxed">
+                            Kami berpusat dan beroperasi di wilayah Mojosongo, Surakarta, Jawa Tengah.
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm transition">
+                        <summary class="flex items-center justify-between font-bold text-brand-900 cursor-pointer list-none">
+                            <span>Bagaimana cara melakukan pemesanan?</span>
+                            <span class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center group-open:rotate-45 transition">+</span>
+                        </summary>
+                        <p class="text-gray-600 text-sm mt-4 pt-4 border-t border-gray-100 leading-relaxed">
+                            Sangat mudah! Cukup klik tombol pesan via WhatsApp di website ini, tentukan varian dan jumlah pesanan, lalu admin kami akan memprosesnya.
+                        </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm transition">
+                        <summary class="flex items-center justify-between font-bold text-brand-900 cursor-pointer list-none">
+                            <span>Apakah bisa untuk acara atau oleh-oleh?</span>
+                            <span class="w-8 h-8 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center group-open:rotate-45 transition">+</span>
+                        </summary>
+                        <p class="text-gray-600 text-sm mt-4 pt-4 border-t border-gray-100 leading-relaxed">
+                            Tentu saja! Produk kami sangat cocok untuk buah tangan, acara keluarga, arisan, rapat kantor, maupun hantaran istimewa.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-brand-900 text-white relative overflow-hidden text-center">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f2c94c_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-4xl mx-auto px-5 relative z-10 space-y-6">
+                <span class="text-xs font-extrabold tracking-[0.2em] text-gold-400 uppercase">YUSYA BAKERY SURAKARTA</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold leading-tight">
+                    Lezatnya Selalu <span class="text-gold-400 italic">di Hati.</span>
+                </h2>
+                <p class="text-gray-300 text-base max-w-xl mx-auto">
+                    Pesan sekarang dan buat harimu atau momen kumpul keluarga menjadi jauh lebih berkesan bersama kelezatan pastry Yusya.
+                </p>
+                <div class="pt-4">
+                    <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20ingin%20memesan%20sekarang." target="_blank" class="inline-flex items-center gap-3 bg-gold-400 hover:bg-gold-500 text-brand-950 font-extrabold px-10 py-4 rounded-full shadow-2xl transition transform hover:-translate-y-1">
+                        <span>Pesan via WhatsApp Sekarang</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-950 text-white border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-5 py-16 grid md:grid-cols-4 gap-10">
+            <div class="space-y-4 md:col-span-1">
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="Yusya Logo" class="w-10 h-10 object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/421853/ffffff?text=YB';">
+                    <span class="font-serif font-bold text-xl">Yusya Bakery</span>
+                </div>
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    Pastry lezat berkualitas tinggi yang dibuat dengan bahan pilihan dan penuh ketulusan di Surakarta.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-gold-400 font-bold text-xs uppercase tracking-widest mb-4">Navigasi</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#tentang" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="#produk" class="hover:text-white transition">Menu & Harga</a></li>
+                    <li><a href="#keunggulan" class="hover:text-white transition">Keunggulan</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gold-400 font-bold text-xs uppercase tracking-widest mb-4">Produk Favorit</h4>
+                <ul class="space-y-2 text-xs text-gray-400">
+                    <li><a href="#produk" class="hover:text-white transition">Bolen Ubi Ungu</a></li>
+                    <li><a href="#produk" class="hover:text-white transition">Chocoroll</a></li>
+                    <li><a href="#produk" class="hover:text-white transition">Cheeseroll</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gold-400 font-bold text-xs uppercase tracking-widest mb-4">Hubungi Kami</h4>
+                <p class="text-xs text-gray-400 space-y-1">
+                    <span class="block">📞 0882-0075-05009</span>
+                    <span class="block">📍 Mojosongo, Surakarta</span>
+                    <span class="block text-gold-400 font-semibold pt-2">Pre-Order H-1</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="border-t border-white/5 py-6 text-center text-xs text-gray-500">
+            <div class="max-w-7xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span>© <span id="currentYear"></span> Yusya Bakery. All rights reserved.</span>
+                <span class="text-gray-400">Lezatnya Selalu di Hati.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Order Bar -->
+    <div id="stickyBar" class="fixed md:hidden z-40 inset-x-3 bottom-3 bg-brand-900/95 backdrop-blur-lg border border-white/10 p-3 rounded-2xl shadow-2xl flex items-center justify-between translate-y-28 transition-transform duration-300">
+        <div>
+            <strong class="block text-white text-xs font-bold">Mau pesan Yusya?</strong>
+            <span class="text-[10px] text-gray-300">Pre-order H-1 • Freshly Baked</span>
+        </div>
+        <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20ingin%20memesan." target="_blank" class="bg-gold-400 text-brand-950 font-extrabold px-4 py-2 rounded-full text-xs shadow-md">
+            Pesan Sekarang
+        </a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20ingin%20bertanya%20seputar%20produk." target="_blank" rel="noopener noreferrer" class="fixed z-50 right-5 bottom-20 md:bottom-8 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl flex items-center justify-center transform hover:scale-110 transition duration-300 group" aria-label="Chat WhatsApp">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-500 ease-in-out text-sm font-bold">
+            Chat WhatsApp
+        </span>
+    </a>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        const header = document.getElementById('siteHeader');
+        const stickyBar = document.getElementById('stickyBar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                header.classList.add('bg-[#fffaf1]/98', 'shadow-sm', 'border-gray-200');
+            } else {
+                header.classList.remove('bg-[#fffaf1]/98', 'shadow-sm', 'border-gray-200');
+            }
+
+            if (window.scrollY > 400) {
+                stickyBar.classList.remove('translate-y-28');
+            } else {
+                stickyBar.classList.add('translate-y-28');
+            }
+        });
+    </script>
+</body>
+</html>
