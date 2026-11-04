@@ -54,7 +54,7 @@
 </head>
 <body class="bg-[#fffaf1] text-[#332b35] font-sans antialiased selection:bg-brand-700 selection:text-white">
 
-    <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 bg-[#fffaf1]/90 backdrop-blur-md border-b border-transparent transition-all duration-300">
+    <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 bg-[#fffaf1]/95 backdrop-blur-md border-b border-transparent transition-all duration-300">
         <div class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
             <a href="#home" class="flex items-center gap-3 group">
                 <img src="logo.png" alt="Yusya Bakery Logo" class="w-11 h-11 object-contain group-hover:scale-105 transition" onerror="this.onerror=null; this.src='https://placehold.co/100x100/421853/ffffff?text=YB';">
@@ -80,15 +80,15 @@
             </div>
 
             <!-- Mobile Menu Toggle -->
-            <button id="mobileToggle" class="md:hidden w-10 h-10 rounded-full bg-brand-100 flex flex-col items-center justify-center gap-1.5 focus:outline-none" aria-label="Menu">
-                <span class="w-5 h-0.5 bg-brand-800 transition-transform duration-300"></span>
-                <span class="w-5 h-0.5 bg-brand-800 transition-opacity duration-300"></span>
-                <span class="w-5 h-0.5 bg-brand-800 transition-transform duration-300"></span>
+            <button id="mobileToggle" class="md:hidden w-10 h-10 rounded-full bg-brand-100 flex flex-col items-center justify-center gap-1.5 focus:outline-none relative z-50" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line w-5 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+                <span class="hamburger-line w-5 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
+                <span class="hamburger-line w-5 h-0.5 bg-brand-800 transition-all duration-300 origin-center"></span>
             </button>
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-4 right-4 bg-[#fffaf1]/98 border border-gray-200 rounded-2xl p-4 shadow-xl space-y-2 mt-2">
+        <div id="mobileMenu" class="hidden absolute top-full left-4 right-4 bg-[#fffaf1] border border-gray-200 rounded-2xl p-4 shadow-xl space-y-2 mt-2 z-50">
             <a href="#home" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Home</a>
             <a href="#tentang" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Tentang</a>
             <a href="#produk" class="block px-4 py-2.5 rounded-xl font-semibold hover:bg-brand-100 hover:text-brand-700 transition mobile-link">Menu & Harga</a>
@@ -240,7 +240,7 @@
                                 <span class="text-[11px] text-gray-400 block">Karakter</span>
                                 <strong class="text-brand-800 text-sm font-bold">Manis & Legit</strong>
                             </div>
-                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Bolen%20Ubi%20Ungu%20(Rp%2045.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
+                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Bolen%20Ubi%20Ungu%20(Rp%2035.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
                                 Pesan Sekarang →
                             </a>
                         </div>
@@ -272,7 +272,7 @@
                                 <span class="text-[11px] text-gray-400 block">Karakter</span>
                                 <strong class="text-brand-800 text-sm font-bold">Rich & Cokelat</strong>
                             </div>
-                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Chocoroll%20(Rp%2048.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
+                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Chocoroll%20(Rp%2045.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
                                 Pesan Sekarang →
                             </a>
                         </div>
@@ -304,7 +304,7 @@
                                 <span class="text-[11px] text-gray-400 block">Karakter</span>
                                 <strong class="text-brand-800 text-sm font-bold">Creamy & Gurih</strong>
                             </div>
-                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Cheeseroll%20(Rp%2050.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
+                            <a href="https://wa.me/62882007505009?text=Halo%20Yusya%20Bakery,%20saya%20tertarik%20pesan%20Cheeseroll%20(Rp%2045.000)." target="_blank" class="bg-brand-800 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full text-xs font-bold transition shadow-md">
                                 Pesan Sekarang →
                             </a>
                         </div>
@@ -505,15 +505,48 @@
         const mobileToggle = document.getElementById('mobileToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
+        const hamburgerLines = mobileToggle.querySelectorAll('.hamburger-line');
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            // Reset hamburger to 3 lines
+            hamburgerLines[0].classList.remove('rotate-45', 'translate-y-[7px]');
+            hamburgerLines[1].classList.remove('opacity-0');
+            hamburgerLines[2].classList.remove('-rotate-45', '-translate-y-[7px]');
+        }
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            // Animate to X
+            hamburgerLines[0].classList.add('rotate-45', 'translate-y-[7px]');
+            hamburgerLines[1].classList.add('opacity-0');
+            hamburgerLines[2].classList.add('-rotate-45', '-translate-y-[7px]');
+        }
 
         mobileToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
 
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                closeMobileMenu();
             });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && 
+                !mobileMenu.contains(e.target) && 
+                !mobileToggle.contains(e.target)) {
+                closeMobileMenu();
+            }
         });
 
         const header = document.getElementById('siteHeader');
@@ -521,9 +554,9 @@
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 30) {
-                header.classList.add('bg-[#fffaf1]/98', 'shadow-sm', 'border-gray-200');
+                header.classList.add('bg-[#fffaf1]/95', 'shadow-sm', 'border-gray-200');
             } else {
-                header.classList.remove('bg-[#fffaf1]/98', 'shadow-sm', 'border-gray-200');
+                header.classList.remove('bg-[#fffaf1]/95', 'shadow-sm', 'border-gray-200');
             }
 
             if (window.scrollY > 400) {
